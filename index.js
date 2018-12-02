@@ -69,20 +69,20 @@ bot.on('message', message => {
  })
 
 bot.on('message', message => { 
-    if (initDuel === 1 && duel.Un.Idj1 === message.author.id) {
-        if(message.content === "Guendal"){
+    if (initDuel === 1) {
+        if(duel.Un.Idj1 === message.author.id && message.content === "Guendal"){
             message.channel.send('Selectionnez votre Transformation, <@' + duel.Un.Idj1 + "> !")
             duel.Un.Idj2 = "358671289860227073"
             initDuel = 2
-        }else if(message.content === "Max"){
+        }else if(duel.Un.Idj1 === message.author.id && message.content === "Max"){
             message.channel.send('Selectionnez votre Transformation, <@' + duel.Un.Idj1 + "> !")
             duel.Un.Idj2 = "258571960987025408"
             initDuel = 2
-        }else if(message.content === "Altar"){
+        }else if(duel.Un.Idj1 === message.author.id && message.content === "Altar"){
             message.channel.send('Selectionnez votre Transformation, <@' + duel.Un.Idj1 + "> !")
             duel.Un.Idj2 = "352094433019166720"
             initDuel = 2
-        }else if(message.content === "Aly"){
+        }else if(duel.Un.Idj1 === message.author.id && message.content === "Aly"){
             message.channel.send('Selectionnez votre Transformation, <@' + duel.Un.Idj1 + "> !")
             duel.Un.Idj2 = "339848621908426752"
             initDuel = 2
@@ -522,20 +522,3 @@ bot.on('message', message => {
         console.log(duel.Un.Poisj2)}})
 
 bot.on('message', message => {
-    if(message.author.id === duel.Un.Idj1){
-        if(duel.Un.Brulj1 > 0){
-            degatF = Math.floor(Math.random() * Math.floor(15 - 5)+ 5)
-            console.log("AAA" + duel.Un.Brulj1)
-            duel.Un.PVj1 -= degatF
-            duel.Un.Brulj1 -= 1
-            message.channel.send("<@" + duel.Un.Idj1 + "> souffre des brûlures ! (**" + degatF + "**PV)\nPv <@" + duel.Un.Idj1 +"> = " + Jojcalc(duel.Un.PVj1) + "\nPv <@" + duel.Un.Idj2 + "> = " + Jojcalc(duel.Un.PVj2))
-            console.log("AAA" + duel.Un.Brulj1)
-    }}
-    if(message.author.id === duel.Un.Idj2){
-        if(duel.Un.Brulj2 > 0){
-            degatF = Math.floor(Math.random() * Math.floor(15 - 5)+ 5)
-            console.log("AAA" + duel.Un.Brulj2)
-            duel.Un.PVj2 -= degatF
-            duel.Un.Brulj2 -= 1
-            message.channel.send("<@" + duel.Un.Idj2 + "> souffre des brûlures ! (**" + degatF + "**  PV) !\nPv <@" + duel.Un.Idj1 +"> = " + Jojcalc(duel.Un.PVj1) + "\nPv <@" + duel.Un.Idj2 + "> = " + Jojcalc(duel.Un.PVj2))
-            console.log("AAA" + duel.Un.Brulj2)}}})
